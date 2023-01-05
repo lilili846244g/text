@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap Animation Web</title>
+    <link rel="stylesheet" href="./gsapanweb.css">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Shizuru&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/regular.min.css
+   ">
+</head>
+<body>
+    <div class="wrapper">
+        <!--==================
+     overlay
+    ====================-->
+
+        <div class="overlay first"></div>
+        <div class="overlay second"></div>
+        <div class="overlay third"></div>
+
+        <!--==================
+      navbar
+    ====================-->
+       <nav class="navbar">
+           <div class="menu">
+               <ion-icon class="ios-menu"></ion-icon>
+           </div>
+           <div class="lang">eng</div>
+           <div class="search">
+               <ion-icon name="ios-search"></ion-icon>
+           </div>
+       </nav>
+
+<!--==================
+      social media 
+    ====================-->
+
+    <div class="media">
+        <ul>
+            <li>facebook</li>
+            <li>instagram</li>
+            <li>twitter</li>
+        </ul>
+      
+    </div>
+
+<!--==================
+      Text 
+    ====================-->
+     
+    <div class="text">
+        <h1>
+            <span class="hidetext">toni&gu</span>
+        </h1> 
+        <h2>
+            duality
+       </h2>
+       <h3>
+           <span class="hidetext">collection 2021 <br> duality</span>
+       </h3>
+       <p>
+          <span class="hidetext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempore atque dolorem voluptate nesciunt. Saepe culpa explicabo expedita neque magnam.</span>
+      </p>
+      
+    </div>
+
+<!--==================
+      sponsor
+    ====================-->
+     <div class="sponsor">
+         <img src="./img/sponsor-logo.png" alt="">
+         <p>official sponsor</p>
+     </div>
+<!--==================
+      DISTORTION
+    ====================-->
+  
+  <div class="distortion"></div>
+
+
+    </div>
+</body>
+
+  <!-- icons -->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <!-- gsap -->
+  <!-- ******** gsap  & three need together use ********-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <!-- three js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+  ></script>
+
+    <script src="./hover-effect.umd.js"></script>
+    <script>
+        new hoverEffect({
+            parent:document.querySelector(".distortion"),
+            intensity:0.2,
+            image1:'./img/01.png',
+            image2:'./img/02.png',
+            displacementImage:'./img/diss.png',
+           imagesRario:380/300
+        })
+        //Text========================
+        
+        const t1 = TweenMax
+        t1.staggerFrom(".navbar div",1.5,{
+            delay:1.5,
+            opacity:0, 
+            y:"20",
+            ease: Expo.easeInOut
+        },0.08); 
+        t1.staggerFrom(".media ul li",1.5,{
+            delay:1.5,
+            opacity:0, 
+            x:"-20",
+            ease: Expo.easeInOut
+        },0.08); 
+
+
+        t1.from(".text h1 .hidetext",1.5,{
+            delay:0.6,
+            y:"100%",
+            ease:Expo.easeInOut
+        });
+
+        t1.from(".text h3 .hidetext",1.5,{
+            delay:1,
+         
+            y:"100%",
+            ease: Expo.easeInOut
+        });
+        t1.from(".text p .hidetext",1.5,{
+            delay:1.4,
+            y:"100%",
+            ease: Expo.easeInOut
+        });
+       t1.from(".text h2 ",1.5,{
+            delay:1.4,
+            opacity:0, 
+            x:"-10000",
+            ease: Expo.easeInOut
+        });
+        t1.from(".sponsor img ",1.5,{
+            delay:1.5,
+            opacity:0, 
+            y:"20",
+            ease: Expo.easeInOut
+        });
+        t1.from(".sponsor p ",1.5,{
+            delay:1.6,
+            opacity:0, 
+            y:"20",
+            ease: Expo.easeInOut
+        });
+        t1.from(".distortion ",1.5,{
+            delay:1.8,
+            opacity:0, 
+            y:"20",
+            ease: Expo.easeInOut
+        });
+        
+        //overlay========================
+        t1.to(".first ",1.5,{
+            delay:.5,
+            top:"-100%",
+            ease: Expo.easeInOut
+        });
+        t1.to(".second ",1.5,{
+            delay:.7,
+            top:"-100%",
+            ease: Expo.easeInOut
+        });
+        t1.to(".third ",1.5,{
+            delay:.9,
+            top:"-100%",
+            ease: Expo.easeInOut
+        });
+
+    </script>
+</html>
